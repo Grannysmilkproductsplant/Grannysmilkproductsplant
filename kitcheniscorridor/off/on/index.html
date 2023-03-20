@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  </head>
+<style>
+        a{text-decoration: none; color: inherit;}
+    a:active{ text-decoration: none; color: inherit;}
+    a:visited{text-decoration: none; color: inherit;}
+
+    body{
+    animation: fadeInAnimation ease 3s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+     }
+
+     @keyframes fadeInAnimation{
+    0%{
+    opacity:0;
+    }
+    100%{
+    opacity:1;
+    }
+    }
+
+     .item{
+        text-align:left;
+        font-family:'Courier New', Courier, monospace;
+            }
+
+#window{
+    position:absolute;
+    top:2vh;
+    left:40vh;
+}
+
+#chair{
+    position:absolute;
+    top:40vh;
+    left:60vh;
+    font-size:20px;
+}
+#desk{
+    position:absolute;
+    top:30vh;
+    font-size: 20px;;
+}
+
+#bed{
+    position:absolute;
+    top:60vh;
+    right:10vh;
+    font-size:40px;
+}
+
+#door2{
+    position:absolute;
+    top: 200vh;
+}
+
+#fishtank{
+    position:absolute;
+    top: 40vh;
+    right:10vh;
+}
+
+/* text animation reference from https://alvarotrigo.com/blog/css-text-animations/*/
+.change{
+    animation: color-animation 4s linear infinite;
+}
+
+.row1{
+    --color-1: #0f1cc7;
+  --color-2: #3D8DAE;
+  --color-3: #a5c3e6;
+
+}
+
+.row2{
+    --color-1: #0d099c;
+  --color-2: #0e90c7;
+  --color-3: #83aaff;
+}
+
+.row3{
+    --color-1: #3623e0;
+  --color-2: #3de7f0;
+  --color-3: #5347b3;
+}
+
+.row4{
+    --color-1: #8681db;
+  --color-2: #009ee2;
+  --color-3: #423873;
+}
+
+.row5{
+    --color-1: #035de2;
+  --color-2: #3D8DAE;
+  --color-3: #919cd8;
+}
+
+@keyframes color-animation {
+  0%    {color: var(--color-1)}
+  32%   {color: var(--color-1)}
+  33%   {color: var(--color-2)}
+  65%   {color: var(--color-2)}
+  66%   {color: var(--color-3)}
+  99%   {color: var(--color-3)}
+  100%  {color: var(--color-1)}
+}
+</style>
+  <body>
+<div id="desk" class="item">
+    <pre>
+                         ,%;,
+                         ,%%,
+        __________________)(__________
+       /                 (__)         \
+      /________________________________\
+      [________________________________]
+         \ \  / /            \ \  / /
+          \ \/ /              \ \/ /
+          _\/ /________________\ \/_
+         [_/o/__________________\o\_]
+          / /\ \              / /\ \
+         /_/  \_\            /_/  \_\
+
+    </pre></div>
+
+    <div id="window" class="item"><pre>
+        <a href="">
+      _________________________________________________  _____________________
+     |                                                 ||                     |
+     |     _(  )_( )_                                  ||                     |
+     |    (_   _    _)                                 ||                     |
+     |      (_) (__)                                   ||                     |
+     |                                                 ||                     |
+     |                                                 ||                     |
+     |                                                 ||                     |
+     |                                       .-~~~-.   ||                     |
+     |                               .- ~ ~-(       )_ ||_                    |
+     |                              /                  ||   ~ -.              |
+     |                             |                   ||        \            |
+     |                              \                  ||       .'            |
+     |                                ~- . ____________||_ . -~               |
+     |                                                 ||                     |
+     |_________________________________________________||_____________________|
+   
+    </a></pre></div>
+
+    <div id="chair" class="item"><pre>
+        i______i
+        I______I
+        I      I
+        I______I
+       /      /I
+      (______( I
+      I I    I I
+      I      I
+    </pre></div>
+
+    <div id="bed" class="item"><pre>
+            ___
+        ,-""___""-.
+       .;""'| |`"":.
+       || | | | | ||
+       ||_|_|_|_|_||
+      //          /|
+     /__         //|
+ ,-""___""-.    //||
+.;""'| |`"":.  //
+||/| | | | || //
+||_|_|_|_|_||//
+||_________||/
+||         ||
+''         ''
+    </pre></div>
+
+    <div id="fishtank" class="item"><pre>
++--------------------------+        
+|                          |      
+|  \|/  *    <span class ="change row1">.  .    . ..  </span>|
+|   \|*/*     <span class ="change row2">..     _ .   </span>|
+|   *|| |     <span class ="change row3">..   ><_> . _</span>|
+|   |`|/     <span class ="change row4">_ .<_><       </span>|
+|    \|    <span class ="change row5">><_>            </span>|
+`-----!------!!!---!!!/ \--'
+    </pre></div>
+
+    <a id="door2" href = "https://grannysmilkproductsplant.github.io/waterside/kitcheniscorridor/">
+        <pre>
+     __________
+    |          |
+    |          |
+    |          |
+    |          |
+    |          |
+    |          |
+    |          |
+    |          |
+    |          |
+    |          |
+    |__________|
+    </pre>
+    </a>
+  </body>
+</html>
