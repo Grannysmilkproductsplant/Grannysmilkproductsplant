@@ -1,38 +1,87 @@
 <html>
-    <head>
-        <style>
-#shan{
-    position:fixed;
-    top: 25%;
-    left: 25%;
-    height: 50%;
-    opacity:0;
-    transition: opacity 3s ease-in-out;
-    cursor:help;
-}
-#shan:hover{
-    opacity:100%;
-}
-#travel{
-    position:fixed;
-    bottom:0%;
-    right: 0%;;
-    cursor:text;
-    font-size: 40px;
-}
-body{
-    cursor:wait;
-}
+  <head>
+  
+  </head>
+  <style>
+    a{text-decoration: none; color: inherit;}
+    a:active{ text-decoration: none; color: inherit;}
+    a:visited{text-decoration: none; color: inherit;}
+    #door{
+        position:fixed;
+        text-align:left;
+        font-family:'Courier New', Courier, monospace;
+        font-size:20px;
+        top: 30%;
+        left:45%;
+        opacity: 1;
+        transition: opacity;
+        z-index: 2;
+    }
 
-        </style>
-    </head>
-    <body>
-        <div id="nothing" onclick="innerHTML=Date()">There seemed to be nothing to see.</div>
- <div id="travel">It is to accpet the necessity of the simple direct going into a field of vision as you would cross an empty beach to look at the ocean.</div>
-    <a href="mountains.html">   
-    <img id="shan" src="https://i.pinimg.com/564x/90/2e/7c/902e7cfda3851a2927e8f8f74b6e48fd.jpg">
-    </a>
-    <script src="script.js">
-    </script>
-    </body>
+    #opened{
+        position:fixed;
+        text-align:left;
+        font-family:'Courier New', Courier, monospace;
+        font-size:20px;
+        top: 25%;
+        left:20%;
+        opacity: 0;
+        transition: opacity 3s ease-in;
+        z-index: 1;
+    }
+
+    #handle{
+        cursor:not-allowed;
+    }
+
+    #goin{
+        cursor:not-allowed;
+    }
+  </style>
+  <body>
+    <div id = "door">
+        <pre>
+     __________
+    |  __  __  |
+    | |  ||  | |
+    | |  ||  | |
+    | |__||__| |
+    |  __  __<a id="handle" onclick = "change()">()</a>|
+    | |  ||  | |
+    | |  ||  | |
+    | |  ||  | |
+    | |  ||  | |
+    | |__||__| |
+    |__________|
+</pre>
+</div>
+
+<div id="opened">
+    <pre>
+         <a id="goin" href = "kitcheniscorridor.html">/|
+        / |
+       /__|</a>______
+      |  __  __  |
+      | |  ||  | |
+      | |  ||  | | 
+      | |__||__| |== sh!
+      |  __  __()|      ...I'm not really here.
+      | |  ||  | |
+      | |  ||  | |
+      | |  ||  | |
+      | |  ||  | |
+      | |__||__| |
+      |__________|
+</pre></div>
+
+<script>
+    function change(){
+document.getElementById("door").style.opacity="0";
+document.getElementById("opened").style.opacity="1";
+    }
+
+</script>
+    <main>
+    </main>
+  </body>
 </html>
