@@ -1,1 +1,324 @@
-123
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+        <link rel="stylesheet" href="/resources/demos/style.css">
+        <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+        <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+        <style>
+
+        .item{
+        position:absolute;
+        text-align:left;
+        font-family:'Courier New', Courier, monospace;
+        opacity: 1;
+        left:20px;
+            }
+        
+        .item:hover{
+            cursor:grab;
+        }
+        
+#pots{
+font-size:10px;
+top:10px;
+}
+
+#microwave{
+    font-size:15px;
+    top:30px;
+}
+
+#sink{
+    font-size: 10px;
+    top:50px;
+}
+
+#fride{
+    font-size: 100px;
+    top:100px;
+}
+
+#door{
+        position:absolute;
+        bottom: 0%;
+        left:0%;
+    }
+
+#door2{
+    position:absolute;
+    bottom:0%;
+    right:0%;
+}
+
+#door2:hover{
+    cursor:not-allowed;
+}
+    a{text-decoration: none; color: inherit;}
+    a:active{ text-decoration: none; color: inherit;}
+    a:visited{text-decoration: none; color: inherit;}
+
+    #handle:hover{
+        cursor: pointer;
+    }
+   
+    /* fade in effect reference from https://hello-sunil.in/fade-in-effect-on-page-load/ */
+    body{
+    animation: fadeInAnimation ease 3s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+     }
+
+     @keyframes fadeInAnimation{
+    0%{
+    opacity:0;
+    }
+    100%{
+    opacity:1;
+    }
+    }
+
+    #canvas{
+        z-index: 12;
+    }
+    </style>
+        <script>
+            $( function() {
+              $( "#pots" ).draggable();
+              $( "#microwave" ).draggable();
+              $( "#sink" ).draggable();
+              $( "#fridge" ).draggable();
+              $( "#cabinet" ).draggable();
+              $( "#mug" ).draggable();
+              $( "#banana" ).draggable();
+            } );
+            </script>
+    </head>
+
+<body>
+    <div class="item" id="pots"><pre>
+         _ ,-. _         
+    ,-'''  )_(  ```-.          
+   (                 )         
+   |`-..._______...-'|       
+[==|                 |==]    ________        __,.--.
+   |                 |  ,-_''.------.``_-.-''__,.--'
+   |                 | ((                ))-' 
+   |                 |  \`-...______...-'/ 
+    `-..._______...-'    `-...______...-' 
+
+</pre></div>
+
+<div class="item" id="microwave"><pre>
+    .----------------.
+   /__________________\
+   ||\ ________ /|  _ |
+   || |:      :| |o(_)|
+   || |;-""""-;| |o(_)|
+   || |________| | __ |
+   ||/__________\|[__]| 
+   "------------------"
+</pre></div>
+
+<div class ="item" id="sink"><pre>
+                  ___
+                .' _ '.
+               / /` `\ \
+               | |   [__]
+               | |    {{
+               | |    }}
+            _  | |  _ {{
+___________<_>_| |_<_>}}________
+    .=======^=(___)=^={{====.
+   / .----------------}}---. \
+  / /                 {{    \ \
+ / /                  }}     \ \
+(  '========================='  )
+ '-----------------------------'
+</pre></div>
+
+<div class="item" id="fridge"><pre>
+ ______________________________
+|::::::::::::::::::::::::::::::|
+|::::::::::::::::::::::::::::::|
+|:: :::::::::::::::::::::::::::|
+|:: :::::::::::::::::::::::::::|
+|::.:::::::::::::::::::::::::::|
+|:: :::::::::::::::::::::::::::|
+|::::::::::::::::::::::::::::::|
+|::::::::::::::::::::::::::::::|
+|::::::::::::::::::::::::::::::|
+|::::::::::::::::::::::::::::::|
+ ==============================
+|::::::::::::::::::::::::::::::|
+|::::::::::::::::::::::::::::::|
+|::::::::::::::::::::::::::::::|
+|:: :::::::::::::::::::::::::::|
+|:: :::::::::::::::::::::::::::|
+|::.:::::::::::::::::::::::::::|
+|:: :::::::::::::::::::::::::::|
+|:: :::::::::::::::::::::::::::|
+|:: :::::::::::::::::::::::::::|
+|::::::::::::::::::::::::::::::|
+|::::::::::::::::::::::::::::::|
+|::::::::::::::::::::::::::::::|
+|::::::::::::::::::::::::::::::|
+|::::::::::::::::::::::::::::::|
+|::::::::::::::::::::::::::::::|
+ ==============================
+</pre></div>
+
+<div class="item" id="cabinet"><pre>
+
+
+ 
+       ___________  ________________ _______________
+    .'           .'               .'               .|
+  .'           .'               .'               .' |
+.'___________.'_______________.'______________ .'   |
+|.----------.|.-----___-----.||.-----___-----.|     |
+|]          |||_____________||||_____________||     |
+||          ||.-----___-----.||.-----___-----.|     |
+||          |||_____________||||_____________||     |
+||          ||.-----___-----.||.-----___-----.|     |
+|]         o|||_____________||||_____________||     |
+||          ||.-----___-----.||.-----___-----.|     |
+||          |||             ||||_____________||     |
+||          |||             |||.-----___-----.|    .'
+|]          |||             ||||             ||  .'
+||__________|||_____________||||_____________||.
+</pre></div>
+
+<div class="item" id="mug"><pre>
+    _ .---.
+   ( |`---'|
+    \|     |
+    : .___, :
+     `-----'
+</pre></div>
+
+<div class="item" id="banana"><pre>
+    _   
+    _ \'-_,#
+   _\'--','`|
+   \`---`  /
+    `----'`
+</pre></div>
+
+<div id = "door">
+    <pre>
+ __________
+|  __  __  |
+| |  ||  | |
+| |  ||  | |
+| |__||__| |
+|  __  __<a id="handle"href = "index.html">()</a>|
+| |  ||  | |
+| |  ||  | |
+| |  ||  | |
+| |  ||  | |
+| |__||__| |
+|__________|
+</pre>
+</div>
+
+<a id="door2" href = "livingroomisbedroom.html">
+    <pre>
+ __________
+|          |
+|          |
+|          |
+|          |
+|          |
+|          |
+|          |
+|          |
+|          |
+|          |
+|__________|
+</pre>
+</a>
+<canvas id="canvas"></canvas>
+</body>
+<script>
+
+// html canvas draw reference from 
+// https://www.geeksforgeeks.org/how-to-draw-with-mouse-in-html-5-canvas/
+window.addEventListener('load', ()=>{
+        
+        resize(); // Resizes the canvas once the window loads
+        document.addEventListener('mousedown', startPainting);
+        document.addEventListener('mouseup', stopPainting);
+        document.addEventListener('mousemove', sketch);
+        window.addEventListener('resize', resize);
+    });
+        
+    const canvas = document.querySelector('#canvas');
+       
+    // Context for the canvas for 2 dimensional operations
+    const ctx = canvas.getContext('2d');
+        
+    // Resizes the canvas to the available size of the window.
+    function resize(){
+      ctx.canvas.width = window.innerWidth;
+      ctx.canvas.height = window.innerHeight;
+    }
+        
+    // Stores the initial position of the cursor
+    let coord = {x:0 , y:0}; 
+       
+    // This is the flag that we are going to use to 
+    // trigger drawing
+    let paint = false;
+        
+    // Updates the coordianates of the cursor when 
+    // an event e is triggered to the coordinates where 
+    // the said event is triggered.
+    function getPosition(event){
+      coord.x = event.clientX - canvas.offsetLeft;
+      coord.y = event.clientY - canvas.offsetTop;
+    }
+      
+    // The following functions toggle the flag to start
+    // and stop drawing
+    function startPainting(event){
+      paint = true;
+      getPosition(event);
+    }
+    function stopPainting(){
+      paint = false;
+    }
+        
+    function sketch(event){
+      if (!paint) return;
+      ctx.beginPath();
+        
+      ctx.lineWidth = 5;
+       
+      // Sets the end of the lines drawn
+      // to a round shape.
+      ctx.lineCap = 'round';
+        
+      ctx.strokeStyle = 'green';
+
+      ctx.globalAlpha = 0.5;
+          
+      // The cursor to start drawing
+      // moves to this coordinate
+      ctx.moveTo(coord.x, coord.y);
+       
+      // The position of the cursor
+      // gets updated as we move the
+      // mouse around.
+      getPosition(event);
+       
+      // A line is traced from start
+      // coordinate to this coordinate
+      ctx.lineTo(coord.x , coord.y);
+        
+      // Draws the line.
+      ctx.stroke();
+    }
+</script>
+</html>
