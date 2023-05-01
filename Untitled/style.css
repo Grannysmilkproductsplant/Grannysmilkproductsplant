@@ -1,0 +1,43 @@
+.messages{
+    position: absolute;
+    opacity: 0;
+    transition: opacity 3s ease-in-out;
+    z-index: 1;
+    padding: 1em;
+    border-radius: 10px;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  }
+  
+  .fade-in {
+    opacity: 1;
+  }
+  
+  .fade-out {
+    opacity: 0;
+  }
+  
+  .messages:hover {
+    cursor: pointer;
+  }
+  
+  .messages:active {
+    cursor: grabbing;
+  }
+  
+  h2{
+    top: 20px;
+  }
+  body{
+    position: absolute;
+    top: 20px;
+    left: 10%;
+  }
+  p{
+    font-size: 14px;
+    width: 70%;
+    text-align: justify;
+    text-indent: 10%;
+    letter-spacing: 2;
+    line-height: normal;
+  }
