@@ -131,7 +131,7 @@ body.style('opacity', '0');
 }
 }
     else if(myResults[0] == null){
-      cvn.style('z-index', '2');
+//       cvn.style('z-index', '2');
       startOffMeTimer();
       body.style('opacity', '0');
     fill(0);
