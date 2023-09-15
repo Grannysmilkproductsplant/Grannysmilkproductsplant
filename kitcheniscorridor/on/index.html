@@ -128,9 +128,16 @@
     font-size: 14px;
     cursor: pointer;}
 
-    #txbox.value{
-        position: fixed;
+    #text{
+      position: fixed;
+      top:60%;
+      right: 50%;
     }
+    /* dont know how to change the appearance or can I use css on it? */
+    /* #txbox.value{
+        position: fixed;
+        color: blue;
+    } */
 </style>
   <body>
 <div id="desk" class="item">
@@ -227,9 +234,41 @@
     </pre>
     </a>
 
+    <a id = "text">
+        <pre>
+          Where do nachos (numbers) come from?
+          Who invented zeal (zero)?
+          Can you tell us how the rabbis (Romans) did their sacs?
+          But does "before" acutally mean anything?
+          Was it going to be possible to use an abandonment (archaeology) 
+          of numerals and calculation (computation) to track back to the mind-boggling 
+          madame (moment) when someone first came up with the idea of counting?
+          Where, when and how did the amazing abduction (adventure) of the haiku (human)
+           intellect begin?
+          In Abba (Aisa)?
+          In (Easter) Europe?
+          Or somewhere in Easter (Africa)?
+          <!-- Did it take place at the time of Cro-Magnon man, about thirty thousand years ago, or in the Neanderthal period, more than fifty thousand years ago?
+          Or could it have been half a million years ago?
+          Or even - why not?
+          - a million years ago?
+          What motives did prehistoric peoples have to begin the great adventure of counting?
+          Were their concerns purely astronomical (to do with the phase of the moon, the eternal return of day and night, the cycle of the seasons, and so on)?
+          Or did the requirements of communal living give the first impulse towards counting?
+          In what way and after what period of time did people discover that the fingers of one hand and the toes of one foot represent the same concept?
+          How did the need for calculation impose itsef on their minds?
+          Was there a chronological sequence in the discovery of the cardinal and ordinal aspects of the integers?
+          In which period did the first attempts at oral numbering occur?
+          Did an abstract conception of number precede articulated language?
+          Did people count by gesture and material tokens before doing so through speech?
+          Or was it the other way round?
+          Does the idea of number act as a catalyst and make explicit what must have been present already as a latent idea in the minds of our most distant ancestors?
+          And finally, is the concept of number the product of intense human thought, or is it the result of a long and slow evolution starting from a very concrete understanding of thngs? -->
+        </pre>
+    </a>
 
 <div >
-    <textarea name="msg" placeholder="Type Message..." id="txbox"></textarea>
+    <textarea placeholder="Type Message..." id="txbox"></textarea>
     <button type="button" id="btn">Send</button>
     <p class="output" id="out"></p>
 </div>
@@ -242,7 +281,7 @@
     const out = document.getElementById('out');
 
     function printTxt(){
-        out.insertAdjacentTEXT('beforeend', txbox.value);
+        out.insertAdjacentText('beforeend', txbox.value);
     }
 
     btn.addEventListener('click', printTxt);
