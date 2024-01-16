@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang = "en">
+    <head>
+        <meta charset="UTF-8">
+        <title></title>
+        <style>
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@600&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Karla:wght@300&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@300&display=swap');
+
+*, *::before, *::after{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+body{
+   background-color: aquamarine; 
+}
+
+#container{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    background:rgb(212, 255, 244);
+    flex-direction: column;
+    min-width: 750px;
+    position:absolute;
+    top: 50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    padding: 35px 15px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgb(255,255,255,0.2);
+    cursor: pointer;
+}
+#container >*{
+color:rgb(20, 101, 159);
+font-family: serif;
+font-size: 1.45rem;
+}
+
+.karla{
+    font-family: 'Karla';
+}
+.manrope{
+    font-family: 'Manrope';
+    font-size:1.25rem;
+}
+.bold{
+    font-weight:bold;
+}
+a{
+    text-decoration: none;
+    color:rgb(16, 141, 126);
+}
+.animation{
+    animation:fade 1.75s linear infinite;
+}
+
+@keyframes fade{
+    25%{
+        opacity:55%
+    }
+    50%{
+        opacity:75%
+    }
+75%{
+    opacity: 100%;
+}
+}
+.invisible{
+    opacity:0;
+}
+.visible{
+    opacity:100%;
+}
+#button{
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%, -50%) scale(2.3);
+    padding: 15px 75px;
+    border-radius: 5px;
+    border:none;
+    cursor: pointer;
+    font-family: 'Karla';
+}
+h1{
+    text-align:center;
+    font-family: 'Josefin+Sans';
+    color:rgb(15, 77, 70);
+    padding-top: 65px;
+}
+        </style>
+    </head>
+<body>
+    <h1 id="header" class="visible">
+       Feeling bored? Click the button to find a fun thing to do!
+    </h1>
+
+    <div id="container" class="invisible">
+        <p id="activity">Activity</p>
+        <p id="type">Type</p>
+        <p id="participants">Participants</p>
+        <!-- <p id="accessbility">Accessibility</p> -->
+    </div>
+    <button id="button">Search</button>
+
+    <script>
+
+        function fetchActivity(){
+            container.classList.replace('invisible', 'visible')
+            header.classList.replace('visible','invisible')
+            button.style.top = '75%'
+            button.style.transform = 'translate(-50%, 50%) scale(1.4)'
+
+            fetch('http://www.boredapi.com/api/activity/')
+            .then(res => res.json())
+            .then(data =>{
+                console.log(data)
+                if(data.link){
+                    activity.innerHTML = `<span class='karla'> Activity: </span> <a href = ${data.link}><span class='manrope bold animation'>${data.activity}</span></a>`
+                }
+                else{
+                    activity.innerHTML = `<span class='karla'> Activity: </span> <span class='manrope'>${data.activity}</span>`
+                    type.innerHTML = `<span class='karla'> Type: </span> <span class='manrope'>${data.type}</span>`
+                    participants.innerHTML = `<span class='karla'> Number of participants: </span> <span class='manrope'>${data.participants}</span>`
+                    // accessbility.innerHTML = `<span class='karla'> Accessibility: </span> <span class='manrope'>${data.accessbility}</span>`
+                }
+            })
+        }
+        button.addEventListener('click', fetchActivity)
+    </script>
+</body>
+</html>
